@@ -1,0 +1,24 @@
+import string
+import webbrowser
+import time
+#import requests, webbrowser, time
+#this program allow you to check if word is a palindrome and show in the webside anagrams of this word
+word = str.lower(input('Wpisz słowo, program sprawdzi czy to palindrom: '))
+word2 = ""
+for c in word:
+    if c in string.ascii_letters:
+        word2 += c
+newlist = [i for i in word2]
+newlist2 = newlist.copy()
+newlist2.reverse()
+
+if newlist == newlist2:
+    print('palindrom')
+else:
+    print('nie palindrom')
+
+#requests.get('https://https://poocoo.pl/')
+anagrams = 'https://poocoo.pl/scrabble-literaki-slowa-z-liter/' + ''.join(word)
+ 
+time.sleep(3)
+webbrowser.open(anagrams)
